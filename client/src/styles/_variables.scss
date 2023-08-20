@@ -1,0 +1,40 @@
+// Global variables here
+$background-color: #fff;
+$info-background: #151950;
+$react-color: #53d2fa;
+$link-color: #71a6ff;
+$white: #ffffff;
+$header-height: 50px;
+
+$tiger-team: #ff6358;
+$lemon-team: #ffd246;
+$organic-team: #55ab1d;
+$ocean-team: #28b4c8;
+
+$full-height: calc(100vh);
+$full-width: calc(100vw);
+
+$header-height: 50px;
+$drawer-width: 85px;
+
+$content-page-height: calc(100vh - (#{$header-height}));
+$content-page-width: calc(100vw - #{$drawer-width});
+
+$detail-page-header-height: 55px;
+$detail-page-menu-width: 300px;
+// -Top header -detail page header
+$detail-page-height: calc(100vh - #{$header-height} - #{$detail-page-header-height});
+$detail-page-width: calc(100vw - #{$detail-page-menu-width} - #{$drawer-width});
+
+$admin-page-height: calc(100vh - 94px);
+
+$top-filterbar-wrapper-height: 100px;
+$content-with-filterbar-height: calc(#{$content-page-height} - #{$top-filterbar-wrapper-height});
+$card-view-height: calc(#{$content-with-filterbar-height} - 50px - 38px);
+$detail-page-content-height: calc(#{$detail-page-height} - #{$top-filterbar-wrapper-height});
+$content-with-navbar-width: calc(100vw - #{$drawer-width});
+$list-detail-page-height: calc(#{$content-page-height} - #{$top-filterbar-wrapper-height} - 50px);
+
+$detail-page-grid-height: calc(100vh - 135px);
+$initiative-detail-page-meeting-tab-width: calc(#{$detail-page-width} - 60px);
+$admin-page-height-small-screen: calc(100vh - 130px);

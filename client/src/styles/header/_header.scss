@@ -1,0 +1,41 @@
+.k-no-auth {
+  height: $content-page-height;
+}
+.header {
+  height: $header-height;
+  width: 100%;
+  background-color: $primary;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  color: $white;
+
+  .header-app-info {
+    display: flex;
+    column-gap: 30px;
+    .app-logo {
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-top: -4px;
+    }
+  }
+  .header-controls {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-left: -40px !important;
+  }
+}
+
+.button {
+  padding: 10px;
+  color: $white;
+  border: 1px solid $white;
+  border-radius: 5px;
+  background-color: transparent;
+}
+.button:hover {
+  background-color: $white;
+  color: $primary;
+}

@@ -1,0 +1,61 @@
+$dark-theme: true;
+$border-radius: 0.25rem;
+$primary: #34b581;
+$secondary: #6c757d;
+$info: #0dcaf0;
+$success: #198754;
+$warning: #ffc107;
+$error: #dc3545;
+$body-text: #ffffff;
+$body-bg: #000000;
+$headings-text: #ffffff;
+$subtle-text: #cccccc;
+$disabled-text: #aaaaaa;
+$component-text: #ffffff;
+$component-bg: #000000;
+$base-text: #ffffff;
+$base-bg: #212529;
+$hovered-text: #ffffff;
+$hovered-bg: #343a40;
+$selected-text: #ffffff;
+$selected-bg: #7171e4;
+$kendo-button-text: #ffffff;
+$kendo-button-bg: #343a40;
+$link-text: #7171e4;
+$link-hover-text: #6969ed;
+$series-a: #7171e4;
+$series-b: #6f42c1;
+$series-c: #20c997;
+$series-d: #198754;
+$series-e: #ffc107;
+$series-f: #dc3545;
+$button-text: #ffffff;
+$button-bg: #343a40;
+
+// Set the variables here.
+// https://www.schemecolor.com/blue-and-black-color-combination.php
+$header-bgcolor: #000;
+$border-color: #495057;
+$body-color: #ffffff !default;
+$card-hover-bg: rgba(10, 40, 172, 0.2);
+$six-packs-card-header: #212529;
+$menu-sidebar-border: #212529;
+$six-packs-header-bg: #002060;
+
+// search
+$search-bg: #24292e;
+$search-text: #ccc;
+$search-border: #24292e;
+// profile dropdown
+$separator: #ffffff;
+$box-shadow: #ccc;
+
+$app-launcher-text-color: #ffffff;
+$breadcrumb-background: #423e3ed1;
+
+:root {
+  color-scheme: dark;
+}
+
+@import 'AppCommon.scss';
+@import 'main.scss';

@@ -1,0 +1,56 @@
+// App.scss
+$border-radius: 0.25rem;
+$dark-theme: false;
+$primary: #37bd80;
+$secondary: #6c757d;
+$info: #0dcaf0;
+$success: #34b581;
+$warning: #ffc107;
+$error: #dc3545;
+$body-text: #212529;
+$body-bg: #ffffff;
+$headings-text: #ffffff;
+$subtle-text: #6c757d;
+$disabled-text: #8f8f8f;
+$component-text: #212529;
+$component-bg: #ffffff;
+$base-text: #212529;
+$base-bg: #f8f9fa;
+$hovered-text: #16181b;
+$hovered-bg: #e9ecef;
+$selected-text: #ffffff;
+$selected-bg: #7171e4;
+$kendo-button-text: #212529;
+$kendo-button-bg: #e4e7eb;
+$link-text: #7171e4;
+$link-hover-text: #7171e4;
+$series-a: #7171e4;
+$series-b: #6f42c1;
+$series-c: #20c997;
+$series-d: #198754;
+$series-e: #ffc107;
+$series-f: #dc3545;
+$button-text: #212529;
+$button-bg: #e4e7eb;
+
+// Set the variables here.
+$header-bgcolor: #4c4cb6;
+$card-hover-bg: #cae4fa8a;
+$six-packs-card-header: #212529;
+$menu-sidebar-border: #dee2e6;
+$six-packs-header-bg: #002060;
+
+// search
+$search-bg: #7171e4;
+$search-text: #fff;
+$search-border: #7171e4;
+// profile dropdown
+$separator: #cae4fa8a;
+$box-shadow: #00000029;
+
+$app-launcher-text-color: #7171e4;
+$breadcrumb-background: #0000000d;
+$avatar-bg: rgb(224, 85, 117);
+
+@import 'AppCommon.scss';
+@import 'main.scss';

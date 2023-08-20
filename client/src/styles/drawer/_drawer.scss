@@ -1,0 +1,93 @@
+.drawer-wrapper {
+  height: calc((#{$content-page-height}) - 5px);
+
+  box-shadow: 3px 4px 5px -2px $box-shadow;
+  -webkit-box-shadow: 3px 4px 5px -2px $box-shadow;
+  -moz-box-shadow: 3px 4px 5px -2px $box-shadow;
+  z-index: $drawer-z-index;
+  transition: width ease-in 0.3s;
+  margin-left: -10px;
+  margin-top: 20px;
+  border-top: 1px solid $white;
+  position: absolute;
+}
+
+.drawer-user-info {
+  display: flex;
+  height: 70px;
+  background-color: $primary;
+  width: 100%;
+  color: white !important;
+  font-weight: 600;
+  font-weight: 600;
+  justify-content: start;
+  column-gap: 10px;
+  align-items: center;
+  padding-left: 10px;
+
+  .user-avatar {
+    background-color: red;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+  }
+
+  .user-info {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+  }
+  .drawer-user-name {
+    color: white;
+    font-weight: 500;
+  }
+  .user-app {
+    color: white;
+    font-size: 0.75rem;
+  }
+}
+.drawer-routes {
+  display: flex;
+  flex-direction: column;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600px;
+  padding: 10px;
+  overflow-y: auto;
+  padding-top: 20px;
+  color: $body-text;
+  .routes-wrapper {
+    display: flex;
+    column-gap: 20px;
+    height: 40px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .routes-wrapper:hover {
+    background-color: $primary;
+    color: $white;
+  }
+  .drawer-route {
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .drawer-wrapper {
+    width: 250px;
+  }
+  .drawer-user-info {
+    padding-right: 5px;
+  }
+}
+
+@media (min-width: 500px) {
+  .drawer-wrapper {
+    width: 300px;
+  }
+}
