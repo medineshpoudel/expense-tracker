@@ -29,7 +29,9 @@ const Header = ({ isLoggedIn = false }: HeaderProps) => {
     <div className="header">
       <div className="header-app-info">
         <Drawer username="Dinesh Poudel" isLoggedIn={isLoggedIn} />
-        <div className="app-logo">Expense Tracker</div>
+        <div className="app-logo" style={{ fontFamily: 'cursive', fontStyle: 'italic' }}>
+          Expense Tracker
+        </div>
       </div>
       <div className="header-controls">
         {theme === 'dark' ? (

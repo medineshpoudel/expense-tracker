@@ -10,7 +10,7 @@ export interface DrawerProps {
   isLoggedIn: boolean;
 }
 
-const Drawer = ({ username = 'Dinesh Poudel', isLoggedIn = false }: DrawerProps) => {
+const Drawer = ({ username = 'Dinesh Poudel', isLoggedIn = true }: DrawerProps) => {
   const navigate = useNavigate();
   const [showDrawer, setShowDrawer] = useState<boolean>(false);
 
@@ -48,7 +48,11 @@ const Drawer = ({ username = 'Dinesh Poudel', isLoggedIn = false }: DrawerProps)
               routes
                 .filter((route) => route.role[0].indexOf('user') >= 0)
                 .map((route) => (
-                  <div className="routes-wrapper" onClick={() => routeClickHandler(route)}>
+                  <div
+                    key={route.name}
+                    className="routes-wrapper"
+                    onClick={() => routeClickHandler(route)}
+                  >
                     <i className={route.icon} />
                     <li className="drawer-route">{route.name}</li>
                   </div>
@@ -57,7 +61,11 @@ const Drawer = ({ username = 'Dinesh Poudel', isLoggedIn = false }: DrawerProps)
               routes
                 .filter((route) => route.role[0].indexOf('guest') >= 0)
                 .map((route) => (
-                  <div className="routes-wrapper" onClick={() => routeClickHandler(route)}>
+                  <div
+                    key={route.name}
+                    className="routes-wrapper"
+                    onClick={() => routeClickHandler(route)}
+                  >
                     <i className={route.icon} />
                     <li className="drawer-route">{route.name}</li>
                   </div>

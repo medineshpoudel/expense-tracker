@@ -219,7 +219,47 @@ body > .k-animation-container {
   z-index: 2; }
 
 .app-content {
-  height: calc(100vh - (50px)); }
+  height: calc(100vh - (50px));
+  z-index: 5; }
+
+.home-wrapper {
+  height: 100%;
+  width: 100%; }
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #34b581;
+  height: 100%; }
+  .landing-header .header-content {
+    flex: 2;
+    display: flex;
+    height: inherit; }
+    .landing-header .header-content .content {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: cursive; }
+      .landing-header .header-content .content h2 {
+        font-family: cursive;
+        color: white; }
+      .landing-header .header-content .content h1 {
+        color: #ffffff;
+        font-weight: 700;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+    .landing-header .header-content .header-iamge {
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      display: flex; }
+      .landing-header .header-content .header-iamge img {
+        height: 400px;
+        width: 400px; }
+  .landing-header .landing-wave {
+    flex: 1; }
 
 .drawer-wrapper {
   height: calc((calc(100vh - (50px))) - 5px);
@@ -231,7 +271,8 @@ body > .k-animation-container {
   margin-left: -10px;
   margin-top: 20px;
   border-top: 1px solid #ffffff;
-  position: absolute; }
+  position: absolute;
+  background-color: white; }
 
 .drawer-user-info {
   display: flex;

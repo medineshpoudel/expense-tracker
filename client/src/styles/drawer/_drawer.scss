@@ -1,6 +1,5 @@
 .drawer-wrapper {
   height: calc((#{$content-page-height}) - 5px);
-
   box-shadow: 3px 4px 5px -2px $box-shadow;
   -webkit-box-shadow: 3px 4px 5px -2px $box-shadow;
   -moz-box-shadow: 3px 4px 5px -2px $box-shadow;
@@ -10,6 +9,7 @@
   margin-top: 20px;
   border-top: 1px solid $white;
   position: absolute;
+  background-color: white;
 }
 
 .drawer-user-info {

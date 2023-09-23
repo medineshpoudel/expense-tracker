@@ -8,20 +8,20 @@ import routes from './routes/routes';
 
 function App() {
   // eslint-disable-next-line no-unused-vars
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>();
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column' }}>
       <HashRouter>
-        <Header isLoggedIn={false} />
+        <Header isLoggedIn={isLoggedIn} />
         <div className="app-content">
           {isLoggedIn && (
             <Routes>
               <Route path="/" element={<Navigate to="/home" />} />
               {routes
-                .filter((f) => f.role.indexOf('user') >= 0)
+                .filter((f) => f.role.indexOf('user') >= -1)
                 .map((item) => (
-                  <Route key={item.route} path={item.route} element={item.element} />
+                  <Route key={item.name} path={item.route} element={item.element} />
                 ))}
               <Route path="*" element={<Navigate to="/home" />} />
             </Routes>
@@ -30,16 +30,16 @@ function App() {
             <Routes>
               <Route path="/" element={<Navigate to="/landing" />} />
               {routes
-                .filter((f) => f.role.indexOf('guest') >= 0)
+                .filter((f) => f.role.indexOf('guest') >= -1)
                 .map((item) => (
-                  <Route key={item.route} path={item.route} element={item.element} />
+                  <Route key={item.name} path={item.route} element={item.element} />
                 ))}
               <Route path="*" element={<Navigate to="/landing" />} />
             </Routes>
           )}
         </div>
-        <ToastContainer />
       </HashRouter>
+      <ToastContainer />
     </div>
   );
 }

@@ -216,7 +216,47 @@ body > .k-animation-container {
   z-index: 2; }
 
 .app-content {
-  height: calc(100vh - (50px)); }
+  height: calc(100vh - (50px));
+  z-index: 5; }
+
+.home-wrapper {
+  height: 100%;
+  width: 100%; }
+
+.landing-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #490ccd;
+  height: 100%; }
+  .landing-header .header-content {
+    flex: 2;
+    display: flex;
+    height: inherit; }
+    .landing-header .header-content .content {
+      flex: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: cursive; }
+      .landing-header .header-content .content h2 {
+        font-family: cursive;
+        color: white; }
+      .landing-header .header-content .content h1 {
+        color: #ffffff;
+        font-weight: 700;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; }
+    .landing-header .header-content .header-iamge {
+      flex: 1;
+      align-items: center;
+      justify-content: center;
+      display: flex; }
+      .landing-header .header-content .header-iamge img {
+        height: 400px;
+        width: 400px; }
+  .landing-header .landing-wave {
+    flex: 1; }
 
 .drawer-wrapper {
   height: calc((calc(100vh - (50px))) - 5px);
@@ -228,12 +268,13 @@ body > .k-animation-container {
   margin-left: -10px;
   margin-top: 20px;
   border-top: 1px solid #ffffff;
-  position: absolute; }
+  position: absolute;
+  background-color: white; }
 
 .drawer-user-info {
   display: flex;
   height: 70px;
-  background-color: #37bd80;
+  background-color: #490ccd;
   width: 100%;
   color: white !important;
   font-weight: 600;
@@ -279,7 +320,7 @@ body > .k-animation-container {
     padding: 10px;
     cursor: pointer; }
   .drawer-routes .routes-wrapper:hover {
-    background-color: #37bd80;
+    background-color: #490ccd;
     color: #ffffff; }
   .drawer-routes .drawer-route {
     font-weight: 600;
@@ -301,7 +342,7 @@ body > .k-animation-container {
 .header {
   height: 50px;
   width: 100%;
-  background-color: #37bd80;
+  background-color: #490ccd;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -329,4 +370,4 @@ body > .k-animation-container {
 
 .button:hover {
   background-color: #ffffff;
-  color: #37bd80; }
+  color: #490ccd; }
