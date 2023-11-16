@@ -1,15 +1,34 @@
 /* eslint-disable max-len */
+import Login from '../pages/Authentication/Login';
+import Signup from '../pages/Authentication/Signup';
 import Home from '../pages/Home';
+import Landing from '../pages/Landing';
 
 const routes = [
   {
     text: 'Landing',
     name: 'Landing',
     role: ['guest'],
-    element: <Home />,
-    route: '/',
+    element: <Landing />,
+    route: '/landing',
     parent: 'default',
     icon: 'fa-light fa-home',
+  },
+  {
+    text: 'LogIn',
+    name: 'LogIn',
+    role: ['user'],
+    element: <Login />,
+    route: '/login',
+    parent: 'default',
+  },
+  {
+    text: 'SignUp',
+    name: 'SignUp',
+    role: ['guest'],
+    element: <Signup />,
+    route: '/signup',
+    parent: 'default',
   },
   {
     text: 'Home',

@@ -2,10 +2,10 @@
 // eslint-disable-next-line arrow-body-style
 // import image from '/images/landing-image.jpeg';
 
-const Home = () => {
+const Landing = () => {
   console.log('hi');
   return (
-    <div className="home-wrapper">
+    <div className="content-wrapper">
       <header className="landing-header">
         <div className="header-content">
           <div className="content">
@@ -34,4 +34,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Landing;

@@ -29,7 +29,11 @@ const Header = ({ isLoggedIn = false }: HeaderProps) => {
     <div className="header">
       <div className="header-app-info">
         <Drawer username="Dinesh Poudel" isLoggedIn={isLoggedIn} />
-        <div className="app-logo" style={{ fontFamily: 'cursive', fontStyle: 'italic' }}>
+        <div
+          className="app-logo"
+          style={{ fontFamily: 'cursive', fontStyle: 'italic' }}
+          onClick={() => navigate('/')}
+        >
           Expense Tracker
         </div>
       </div>

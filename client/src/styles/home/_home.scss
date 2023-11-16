@@ -2,7 +2,7 @@
   height: $content-page-height;
   z-index: 5;
 }
-.home-wrapper {
+.content-wrapper {
   height: 100%;
   width: 100%;
 }
@@ -48,5 +48,14 @@
   }
   .landing-wave {
     flex: 1;
+  }
+}
+
+@media (max-width: 500px) {
+  .landing-header {
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    height: 100%;
   }
 }
