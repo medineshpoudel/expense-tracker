@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Drawer from '../drawer/Drawer';
+import { LocalStorageConstants } from '../../../constants/Constants';
 
 export interface HeaderProps {
   isLoggedIn: boolean;
@@ -46,9 +47,19 @@ const Header = ({ isLoggedIn = false }: HeaderProps) => {
 
         <i className="fa fa-bell fa-lg" />
         {isLoggedIn && (
-          <button className="button" type="button">
-            Logout
-          </button>
+          <>
+            <h3>{localStorage.getItem(LocalStorageConstants.expenseTrackerUsername)}</h3>
+            <button
+              className="button"
+              type="button"
+              onClick={() => {
+                localStorage.clear();
+                window.location.href = '/';
+              }}
+            >
+              Logout
+            </button>
+          </>
         )}
         {!isLoggedIn && (
           <button className="button" type="button" onClick={() => navigate('/login')}>

@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./configs/db.configs");
-const noteRouter = require("./routes/notes");
 const userRouter = require("./routes/users");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
@@ -19,7 +18,6 @@ app.use((req, res, next) => {
 });
 
 app.use("/", userRouter);
-app.use("/", noteRouter);
 app.use(notFound);
 app.use(errorHandler);
 

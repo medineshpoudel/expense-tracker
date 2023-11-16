@@ -17,10 +17,11 @@ const routes = [
   {
     text: 'LogIn',
     name: 'LogIn',
-    role: ['user'],
+    role: ['guest'],
     element: <Login />,
     route: '/login',
     parent: 'default',
+    showOnDrawer: false,
   },
   {
     text: 'SignUp',
@@ -29,6 +30,7 @@ const routes = [
     element: <Signup />,
     route: '/signup',
     parent: 'default',
+    showOnDrawer: false,
   },
   {
     text: 'Home',

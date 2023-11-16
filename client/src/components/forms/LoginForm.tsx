@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom';
 
 export interface FormProps {
   onSubmit: (formData: any) => void;
+  errorMessage?: string;
 }
 
-const LoginForm = ({ onSubmit }: FormProps) => {
+const LoginForm = ({ onSubmit, errorMessage }: FormProps) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
@@ -30,16 +31,16 @@ const LoginForm = ({ onSubmit }: FormProps) => {
           placeholder="youremail@email.com"
           name="email"
           id="email"
-          onChange={(e: any) => setPassword(e.target.value)}
+          onChange={(e: any) => setEmail(e.target.value)}
         />
         <br />
         <label htmlFor="firstname"> Password </label> <br />
         <input
           type="password"
           placeholder="password"
-          name="firstname"
-          id="firstname"
-          onChange={(e: any) => setEmail(e.target.value)}
+          name="password"
+          id="password"
+          onChange={(e: any) => setPassword(e.target.value)}
         />
         <br />
         <button type="submit" className="login-button">
@@ -55,6 +56,8 @@ const LoginForm = ({ onSubmit }: FormProps) => {
         >
           Signup
         </button>
+        <br />
+        {errorMessage && <p className="error-message">{errorMessage} </p>}
       </form>
     </div>
   );

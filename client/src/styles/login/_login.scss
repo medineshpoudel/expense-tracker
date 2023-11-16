@@ -63,3 +63,19 @@
   font-weight: 600;
   cursor: pointer;
 }
+
+/* Define the animation */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.error-message {
+  animation: fadeOut 10s ease-out;
+  color: red;
+  font-weight: 600;
+}

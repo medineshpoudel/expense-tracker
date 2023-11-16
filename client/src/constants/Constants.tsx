@@ -7,6 +7,11 @@ export const ActionMessages = {
   errorFetchingDataMessage: 'Error fetching data from database.',
 };
 
+export const LocalStorageConstants = {
+  expenseTrackerToken: 'expenseTrackerToken',
+  expenseTrackerUsername: 'expenseTrackerUsername',
+};
+
 export const NodeBorder = {};
 
 export const NoRecordMessage = 'No Records Found';

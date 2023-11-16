@@ -2,18 +2,19 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 export interface FormProps {
   onSubmit: (formData: any) => void;
+  errorMessage?: string;
 }
 
-const SignupForm = ({ onSubmit }: FormProps) => {
+const SignupForm = ({ onSubmit, errorMessage }: FormProps) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [username, setUsername] = useState<string>('');
   const [userImage, setUserImage] = useState('');
   const navigate = useNavigate();
-
   const onFormSubmit = (e: any) => {
     e.preventDefault();
     onSubmit({
@@ -34,7 +35,7 @@ const SignupForm = ({ onSubmit }: FormProps) => {
           placeholder="youremail@email.com"
           name="email"
           id="email"
-          onChange={(e: any) => setPassword(e.target.value)}
+          onChange={(e: any) => setEmail(e.target.value)}
         />
         <label htmlFor="username">Username </label> <br />
         <input
@@ -51,7 +52,7 @@ const SignupForm = ({ onSubmit }: FormProps) => {
           placeholder="password"
           name="firstname"
           id="firstname"
-          onChange={(e: any) => setEmail(e.target.value)}
+          onChange={(e: any) => setPassword(e.target.value)}
         />
         <br />
         <label htmlFor="username">Upload your picture </label> <br />
@@ -66,7 +67,7 @@ const SignupForm = ({ onSubmit }: FormProps) => {
           SIGNUP
         </button>
         <br />
-        <label>Do not have an account? </label>
+        <label>Already have an account? </label>
         <button
           type="button"
           role="link"
@@ -75,6 +76,8 @@ const SignupForm = ({ onSubmit }: FormProps) => {
         >
           Login
         </button>
+        <br />
+        {errorMessage && <p className="error-message">{errorMessage} </p>}
       </form>
     </div>
   );

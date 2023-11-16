@@ -47,6 +47,7 @@ const Drawer = ({ username = 'Dinesh Poudel', isLoggedIn = true }: DrawerProps) 
             {isLoggedIn &&
               routes
                 .filter((route) => route.role[0].indexOf('user') >= 0)
+                // .filter((route) => route.showOnDrawer[0].indexOf('true') >= 0)
                 .map((route) => (
                   <div
                     key={route.name}
