@@ -13,10 +13,23 @@ const loginUser = async (req, res) => {
   try {
     const user = await User.login(email, password);
     const token = createToken(user._id);
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+    });
     res.status(200).json({ email, token, username: user.username });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
+};
+
+//logout user
+const logoutUser = async (req, res) => {
+  res.cookie("jwt", "", {
+    httpOnly: true,
+    expires: new Date(0),
+  });
+  res.status(200).json({ msg: "Logged out successfully." });
 };
 
 //signup user
@@ -27,6 +40,10 @@ const signupUser = async (req, res) => {
     const user = await User.signup(email, password, username);
     //create a token
     const token = createToken(user._id);
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      maxAge: 30 * 24 * 60 * 60 * 1000,
+    });
     res.status(200).json({ email, token, username });
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -36,4 +53,5 @@ const signupUser = async (req, res) => {
 module.exports = {
   loginUser,
   signupUser,
+  logoutUser,
 };
