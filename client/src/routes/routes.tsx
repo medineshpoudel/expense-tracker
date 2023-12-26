@@ -2,6 +2,7 @@
 import Login from '../pages/Authentication/Login';
 import Signup from '../pages/Authentication/Signup';
 import Expenses from '../pages/Expenses/Expenses';
+import ExpensesGridView from '../pages/Expenses/ExpensesGridView';
 import Home from '../pages/Home';
 import Landing from '../pages/Landing';
 
@@ -55,7 +56,7 @@ const routes = [
     text: 'Records',
     name: 'Records',
     role: ['user'],
-    element: <Home />,
+    element: <ExpensesGridView />,
     route: '/records',
     parent: 'default',
     icon: 'fa-solid fa-list',
