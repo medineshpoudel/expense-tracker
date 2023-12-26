@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import Login from '../pages/Authentication/Login';
 import Signup from '../pages/Authentication/Signup';
+import Expenses from '../pages/Expenses/Expenses';
 import Home from '../pages/Home';
 import Landing from '../pages/Landing';
 
@@ -40,6 +41,15 @@ const routes = [
     route: '/home',
     parent: 'default',
     icon: 'fa-light fa-home',
+  },
+  {
+    text: 'Expenses',
+    name: 'Expenses',
+    role: ['user'],
+    element: <Expenses />,
+    route: '/expenses',
+    parent: 'default',
+    icon: 'fa-solid fa-list',
   },
   {
     text: 'Records',

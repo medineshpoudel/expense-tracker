@@ -445,6 +445,11 @@ body > .k-animation-container {
 
 .error-message {
   animation: fadeOut 10s ease-out;
-  /* Change 3s to the duration you want */
   color: red;
   font-weight: 600; }
+
+.expenses-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }

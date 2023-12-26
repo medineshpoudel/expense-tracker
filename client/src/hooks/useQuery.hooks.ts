@@ -29,7 +29,7 @@ const useQueryHook = ({ query }: useQueryHookProps) => {
 
   useEffect(() => {
     fetchData();
-  }, [items, isLoading]);
+  }, []);
 
   const addItem = ({ item }: any) => {
     setIsLoading(true);

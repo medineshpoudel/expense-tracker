@@ -1,10 +1,8 @@
-/* eslint-disable max-len */
-// eslint-disable-next-line arrow-body-style
-// import image from '/images/landing-image.jpeg';
+import React from 'react';
 
 const Home = () => {
   console.log('hi');
-  return <div className="home-wrapper">hi</div>;
+  return <div>Home</div>;
 };
 
 export default Home;

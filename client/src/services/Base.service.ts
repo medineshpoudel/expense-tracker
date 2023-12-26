@@ -1,3 +1,5 @@
+import { LocalStorageConstants } from '../constants/Constants';
+
 const axios = require('axios');
 
 export interface ApplyActionProps {
@@ -22,23 +24,19 @@ class BaseService {
       referrerPolicy: 'no-referrer',
       headers: {
         'Content-Type': 'application/json',
-        // Authorization: `Bearer ${sessionStorage[MilhubConstants.SessionStorage.MilhubToken]}`,
+        Authorization: `Bearer ${localStorage[LocalStorageConstants.expenseTrackerToken]}`,
       },
       data,
       url: `http://localhost:8000/${query}`,
     });
   }
 
-  /**
-   *  Apis for different actions in Milhub.
-   */
   static get = async ({ query, type = 'get' }: ApplyActionProps) => this.apply(query, type);
 
   static add = async ({ query, data = null }: ApplyActionProps) => this.apply(query, 'post', data);
 
   static update = ({ query, data = null }: ApplyActionProps) => this.apply(query, 'patch', data);
 
-  // Use "@aras.action": "purge" annotation for data to delete only one version of the item
   static delete = ({ query, data = null }: ApplyActionProps) => this.apply(query, 'delete', data);
 
   static method = ({ query, data = null }: ApplyActionProps) =>
@@ -49,7 +47,7 @@ class BaseService {
    */
   static handle401Error = () => {
     sessionStorage.clear();
-    window.location.href = '/';
+    // window.location.href = '/';
   };
 
   static handleError = (error: any) => {

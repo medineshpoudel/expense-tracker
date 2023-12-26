@@ -12,6 +12,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(
     localStorage[LocalStorageConstants.expenseTrackerToken] !== undefined,
   );
+
   useEffect(() => {
     async function validateUser() {
       if (localStorage[LocalStorageConstants.expenseTrackerToken]) {
