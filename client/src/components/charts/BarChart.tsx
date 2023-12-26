@@ -23,6 +23,7 @@ const BarChart = ({
   chartLabels = ['Personal', 'Bill Sharing', 'Loan Payment', 'Family Expenditure'],
   chartTitle = 'Expenses',
   horizontal = false,
+  redrawChart = false,
 }: any) => {
   const barChartOptions = {
     responsive: true,
@@ -43,7 +44,7 @@ const BarChart = ({
     datasets: dataSets,
   };
 
-  return <Bar options={barChartOptions} data={chartData} redraw />;
+  return <Bar options={barChartOptions} data={chartData} redraw={redrawChart} />;
 };
 
 export default BarChart;
