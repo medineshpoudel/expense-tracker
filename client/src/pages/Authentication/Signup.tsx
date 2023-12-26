@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import SignupForm from '../../components/forms/SignupForm';
 import BaseService from '../../services/Base.service';
+import { LocalStorageConstants } from '../../constants/Constants';
 
 const Signup = () => {
   const [errorMessage, setErrorMessage] = useState<string>('');
   const onSignupSubmit = async (formData: any) => {
-    BaseService.add({ query: 'signup', data: formData })
-      .then((result) => console.log(result))
+    BaseService.add({ query: 'user/signup', data: formData })
+      .then((result) => {
+        localStorage.setItem(LocalStorageConstants.expenseTrackerToken, result.data.token);
+        localStorage.setItem(LocalStorageConstants.expenseTrackerUsername, result.data.username);
+        window.location.href = '/';
+      })
       .catch((error) => setErrorMessage(error.response.data.error));
   };
   // Function to set error message and trigger animation

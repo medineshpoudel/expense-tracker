@@ -1,28 +1,33 @@
 const express = require("express");
 const cors = require("cors");
-const db = require("./configs/db.configs");
+const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
+dotenv.config();
 const userRouter = require("./routes/users");
-const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
-
+const notesRouter = require("./routes/notes");
+const expensesRouter = require("./routes/expenses");
 const app = express();
-const corsOptions = {
-  origin: "http://localhost:3000",
-};
+const connectDB = require("./configs/db/db.config");
+connectDB();
 
+var corsOptions = {
+  origin: "http://localhost:3000",
+  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 app.use(cors(corsOptions));
-app.use(express.urlencoded({ extended: true }));
+
+app.use(cookieParser());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use((req, res, next) => {
-  console.log(req.path, req.method);
+  console.log(req.path);
   next();
 });
-
-app.use("/", userRouter);
-app.use(notFound);
-app.use(errorHandler);
-
-//PORT
+app.use("/user", userRouter);
+app.use("/notes", notesRouter);
+app.use("/expenses", expensesRouter);
 const PORT = 8000;
-app.listen(8000, () => {
-  console.log(`Listening on the PORT : ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Listening to the port ${PORT}`);
 });

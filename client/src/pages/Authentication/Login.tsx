@@ -10,8 +10,11 @@ const Login = () => {
   // const navigate = useNavigate();
 
   const onLoginSubmit = (formData: any) => {
-    BaseService.add({ query: 'login', data: formData })
+    BaseService.add({ query: 'user/login', data: formData })
       .then((result) => {
+        console.log(result);
+        // eslint-disable-next-line no-debugger
+        debugger;
         localStorage.setItem(LocalStorageConstants.expenseTrackerToken, result.data.token);
         localStorage.setItem(LocalStorageConstants.expenseTrackerUsername, result.data.username);
         // navigate('/');

@@ -20,10 +20,14 @@
     "@types/react-dom": "^18.0.5",
     "@types/react-outside-click-handler": "^1.3.1",
     "axios": "^0.27.2",
+    "buffer": "^6.0.3",
+    "crypto": "^1.0.1",
     "dotenv": "^16.0.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "hammerjs": "^2.0.8",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "lodash": "^4.17.21",
     "node-sass": "^7.0.1",
     "prettier": "^2.7.1",
@@ -37,6 +41,7 @@
     "react-toastify": "^9.0.5",
     "sass": "^1.52.3",
     "sass-loader": "^13.0.0",
+    "stream": "^0.0.2",
     "typescript": "^4.7.4",
     "usehooks-ts": "^2.6.0",
     "uuid": "^8.3.2",
@@ -70,6 +75,7 @@
     ]
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
     "@types/react-mentions": "^4.1.8",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.29.0",
@@ -83,6 +89,9 @@
     "eslint-plugin-storybook": "^0.6.8",
     "husky": "^8.0.1",
     "storybook-dark-mode": "^2.0.5",
-    "webpack": "^5.73.0"
+    "webpack": "^5.89.0"
+  },
+  "browser": {
+    "crypto": false
   }
 }

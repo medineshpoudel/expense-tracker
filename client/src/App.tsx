@@ -16,6 +16,8 @@ function App() {
     async function validateUser() {
       if (localStorage[LocalStorageConstants.expenseTrackerToken]) {
         setIsLoggedIn(true);
+      } else {
+        setIsLoggedIn(false);
       }
     }
     validateUser().then((r) => r);
