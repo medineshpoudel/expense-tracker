@@ -21,15 +21,15 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/user", userRouter);
-app.use("/notes", notesRouter);
-app.use("/expenses", expensesRouter);
-app.use("/debts", debtsRouter);
-
 app.use((req, res, next) => {
   console.log(req.path);
   next();
 });
+
+app.use("/user", userRouter);
+app.use("/notes", notesRouter);
+app.use("/expenses", expensesRouter);
+app.use("/debts", debtsRouter);
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => {

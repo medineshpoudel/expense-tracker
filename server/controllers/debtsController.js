@@ -21,11 +21,17 @@ const getDebt = async (req, res) => {
 };
 
 const postDebt = async (req, res) => {
-  const debts = req.body;
   const user = req.user;
+  const { name, creditor, amount, dateIncurred } = req.body;
+  if (!name || !creditor || !amount || !dateIncurred) {
+    return res.status(400).json({
+      error: "Fieds  name, creditor , amount , dateIncurred are required",
+    });
+  }
+
   try {
     const newDebt = await Debts.create({
-      ...debts,
+      ...req.body,
       createdBy: user?._id,
     });
     res.status(200).json(newDebt);
@@ -37,6 +43,12 @@ const postDebt = async (req, res) => {
 const updateDebt = async (req, res) => {
   const { id } = req.params;
   const dataToBeUpdated = req.body;
+  const { name, creditor, amount, dateIncurred } = req.body;
+  if (!name || !creditor || !amount || !dateIncurred) {
+    return res.status(400).json({
+      error: "Fieds  name, creditor , amount , dateIncurred are required",
+    });
+  }
 
   try {
     const updatedDebts = await Debts.findOneAndUpdate(
