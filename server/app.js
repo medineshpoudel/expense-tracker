@@ -6,6 +6,7 @@ dotenv.config();
 const userRouter = require("./routes/users");
 const notesRouter = require("./routes/notes");
 const expensesRouter = require("./routes/expenses");
+const incomeRouter = require("./routes/income");
 const app = express();
 const connectDB = require("./configs/db/db.config");
 connectDB();
@@ -27,6 +28,7 @@ app.use((req, res, next) => {
 app.use("/user", userRouter);
 app.use("/notes", notesRouter);
 app.use("/expenses", expensesRouter);
+app.use("/income", incomeRouter);
 const PORT = 8000;
 app.listen(PORT, () => {
   console.log(`Listening to the port ${PORT}`);
