@@ -1,50 +1,35 @@
 import React from 'react';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { BarChart as BarChartComponent } from '@mui/x-charts/BarChart';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+export interface BarChartProps {
+  chartLabel: String[];
+  chartData: number[];
+  width?: number;
+  height?: number;
+}
 
 const BarChart = ({
-  dataSets = [
-    {
-      label: 'Monthly',
-      data: [10, 20, 30, 40, 50, 60, 70, 80],
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-  ],
-  chartLabels = ['Personal', 'Bill Sharing', 'Loan Payment', 'Family Expenditure'],
-  chartTitle = 'Expenses',
-  horizontal = false,
-  redrawChart = false,
-}: any) => {
-  const barChartOptions = {
-    responsive: true,
-    indexAxis: `${horizontal ? 'y' : 'x'}` as const,
-    plugins: {
-      legend: {
-        position: `${horizontal ? 'right' : 'top'}` as const,
+  chartLabel = ['a', 'b', 'c'],
+  chartData = [2, 5, 3],
+  width = 500,
+  height = 300,
+}: BarChartProps) => (
+  <BarChartComponent
+    xAxis={[
+      {
+        id: 'barCategories',
+        data: chartLabel,
+        scaleType: 'band',
       },
-      title: {
-        display: true,
-        text: chartTitle,
+    ]}
+    series={[
+      {
+        data: chartData,
       },
-    },
-  };
-
-  const chartData = {
-    labels: chartLabels,
-    datasets: dataSets,
-  };
-
-  return <Bar options={barChartOptions} data={chartData} redraw={redrawChart} />;
-};
+    ]}
+    width={width}
+    height={height}
+  />
+);
 
 export default BarChart;
