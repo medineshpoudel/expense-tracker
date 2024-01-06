@@ -2,24 +2,26 @@ import React from 'react';
 import { BarChart as BarChartComponent } from '@mui/x-charts/BarChart';
 
 export interface BarChartProps {
-  chartXAxis: any;
+  chartLabel: String[];
   chartData: number[];
   width?: number;
   height?: number;
 }
 
 const BarChart = ({
-  chartXAxis = {
-    id: 'barCategories',
-    data: ['bar A', 'bar B', 'bar C'],
-    scaleType: 'band',
-  },
+  chartLabel = ['a', 'b', 'c'],
   chartData = [2, 5, 3],
   width = 500,
   height = 300,
 }: BarChartProps) => (
   <BarChartComponent
-    xAxis={[chartXAxis]}
+    xAxis={[
+      {
+        id: 'barCategories',
+        data: chartLabel,
+        scaleType: 'band',
+      },
+    ]}
     series={[
       {
         data: chartData,

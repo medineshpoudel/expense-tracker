@@ -7,6 +7,7 @@ import Grid from '../../components/grid/Grid';
 import RecordGrirdColumns from '../Records/RecordsGridColumns';
 import GridWithForm from '../../components/grid/GridWithForm';
 import ExpensesFormFields from './ExpensesFormFields';
+import ExpensesGridColumn from './ExpensesGridColumns';
 
 const Expenses = () => {
   const [chartLabels, setChartLabels] = useState<any>([]);
@@ -27,7 +28,7 @@ const Expenses = () => {
           <GridWithForm
             gridData={items}
             formFields={ExpensesFormFields}
-            gridColumns={RecordGrirdColumns}
+            gridColumns={ExpensesGridColumn}
             onActionHandler={onActionHandler}
             formTitle="Expenses"
           />

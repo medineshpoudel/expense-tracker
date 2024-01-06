@@ -1,33 +1,29 @@
 /* eslint-disable import/order */
-import React, { useState } from 'react';
-import FormComponent from '../../components/forms/Form';
-import RecordsFormFields from './RecordsFormFields';
-import { Button } from '@mui/material';
-import Modal from '@mui/material/Modal';
+import React, { useEffect, useState } from 'react';
+import useQueryHook from '../../hooks/useQuery.hooks';
+import BarChart from '../../components/charts/BarChart';
 
 const Records = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [chartLabels, setChartLabels] = useState<any>([]);
+  const [chartData, setChartData] = useState<any>([]);
+
+  const { items, isLoading } = useQueryHook({ query: 'expenses/category' });
+
+  useEffect(() => {
+    setChartLabels(items?.map((expense: any) => expense._id[0]));
+    setChartData(items?.map((expense: any) => expense.totalAmount));
+  }, [items]);
+
   return (
-    <>
-      <Button onClick={handleOpen}>Open modal</Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        className="form-modal"
-      >
-        <FormComponent
-          formFields={RecordsFormFields}
-          formTitle="Records"
-          onCancel={() => {
-            setOpen(false);
-          }}
-        />
-      </Modal>
-    </>
+    <div className="home-wrapper">
+      {isLoading ? (
+        <h1> Loading ....</h1>
+      ) : (
+        <div className="expenses-wrapper">
+          <BarChart chartLabel={chartLabels ?? ['a', 'b', 'c']} chartData={chartData} />
+        </div>
+      )}
+    </div>
   );
 };
 
