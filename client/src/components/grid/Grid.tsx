@@ -31,7 +31,7 @@ export interface GridProps {
   onDelete: () => any;
 }
 
-const Grid = ({ gridColumns, gridData = [], onAdd, onEdit, onDelete }: any) => {
+const Grid = ({ gridColumns, gridData = [], onAdd, onEdit, onDelete, pageTitle }: any) => {
   const [rows, setRows] = useState(gridData);
   const [rowModesModel, setRowModesModel] = useState<GridRowModesModel>({});
   useEffect(() => {
@@ -130,40 +130,45 @@ const Grid = ({ gridColumns, gridData = [], onAdd, onEdit, onDelete }: any) => {
   ];
 
   return (
-    <Box
-      sx={{
-        height: 500,
-        width: '100%',
-        '& .actions': {
-          color: 'text.secondary',
-        },
-        '& .textPrimary': {
-          color: 'text.primary',
-        },
-      }}
-    >
-      <Button
-        onClick={onAdd}
-        startIcon="+"
-        color="primary"
-        variant="contained"
-        style={{ margin: '10px' }}
-      >
-        Add
-      </Button>
-      <DataGrid
-        rows={rows}
-        columns={columns}
-        rowModesModel={rowModesModel}
-        onRowModesModelChange={handleRowModesModelChange}
-        onRowEditStop={handleRowEditStop}
-        processRowUpdate={processRowUpdate}
-        slotProps={{
-          toolbar: { setRows, setRowModesModel },
+    <>
+      <Box>
+        <h1>{pageTitle}</h1>
+      </Box>
+      <Box
+        sx={{
+          height: 500,
+          width: '100%',
+          '& .actions': {
+            color: 'text.secondary',
+          },
+          '& .textPrimary': {
+            color: 'text.primary',
+          },
         }}
-        autoHeight
-      />
-    </Box>
+      >
+        <Button
+          onClick={onAdd}
+          startIcon="+"
+          color="primary"
+          variant="contained"
+          style={{ margin: '10px' }}
+        >
+          Add
+        </Button>
+        <DataGrid
+          rows={rows}
+          columns={columns}
+          rowModesModel={rowModesModel}
+          onRowModesModelChange={handleRowModesModelChange}
+          onRowEditStop={handleRowEditStop}
+          processRowUpdate={processRowUpdate}
+          slotProps={{
+            toolbar: { setRows, setRowModesModel },
+          }}
+          autoHeight
+        />
+      </Box>
+    </>
   );
 };
 

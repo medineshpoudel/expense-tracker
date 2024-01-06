@@ -30,7 +30,7 @@ const Expenses = () => {
             formFields={ExpensesFormFields}
             gridColumns={ExpensesGridColumn}
             onActionHandler={onActionHandler}
-            formTitle="Expenses"
+            pageTitle="Expenses"
           />
         </div>
       )}

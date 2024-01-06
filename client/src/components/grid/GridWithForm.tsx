@@ -4,7 +4,7 @@ import ActionHandlerActions from '../../constants/StaticLists';
 import { ModalContext } from '../../context/ModalProvider';
 import FormComponent from '../forms/Form';
 
-const GridWithForm = ({ gridData, gridColumns, formFields, onActionHandler, formTitle }: any) => {
+const GridWithForm = ({ gridData, gridColumns, formFields, onActionHandler, pageTitle }: any) => {
   const { setModalState, closeModal } = useContext(ModalContext);
 
   const onFormSubmit = (data: any) => {
@@ -19,7 +19,7 @@ const GridWithForm = ({ gridData, gridColumns, formFields, onActionHandler, form
 
   const onAddHandler = () => {
     setModalState({
-      title: `Create ${formTitle}`,
+      title: `Create ${pageTitle}`,
       dialogChildren: (
         <FormComponent
           formFields={formFields}
@@ -34,7 +34,7 @@ const GridWithForm = ({ gridData, gridColumns, formFields, onActionHandler, form
   };
   const onEditHandler = (data: any) => {
     setModalState({
-      title: `Create ${formTitle}`,
+      title: `Create ${pageTitle}`,
       dialogChildren: (
         <FormComponent
           initialValues={data}
@@ -60,6 +60,7 @@ const GridWithForm = ({ gridData, gridColumns, formFields, onActionHandler, form
       onAdd={onAddHandler}
       onEdit={onEditHandler}
       onDelete={onDeleteHandler}
+      pageTitle={pageTitle}
     />
   );
 };
