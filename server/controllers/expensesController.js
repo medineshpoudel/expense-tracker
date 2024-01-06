@@ -55,7 +55,7 @@ const deleteExpense = async (req, res) => {
 
   try {
     const deletedExpense = await Expenses.deleteOne({ _id: id });
-    res.status(200).json(deletedExpense);
+    res.status(200).json({ _id: id });
   } catch (error) {
     res.status(400).json({ error });
   }
