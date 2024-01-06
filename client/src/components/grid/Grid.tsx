@@ -116,13 +116,13 @@ const Grid = ({ gridColumns, gridData = [], onAdd, onEdit, onDelete }: any) => {
             label="Edit"
             className="textPrimary"
             onClick={handleEditClick(id)}
-            color="inherit"
+            color="primary"
           />,
           <GridActionsCellItem
             icon={<DeleteIcon />}
             label="Delete"
             onClick={handleDeleteClick(id)}
-            color="inherit"
+            color="error"
           />,
         ];
       },
@@ -142,11 +142,18 @@ const Grid = ({ gridColumns, gridData = [], onAdd, onEdit, onDelete }: any) => {
         },
       }}
     >
-      <Button onClick={onAdd}>Aadd</Button>
+      <Button
+        onClick={onAdd}
+        startIcon="+"
+        color="primary"
+        variant="contained"
+        style={{ margin: '10px' }}
+      >
+        Add
+      </Button>
       <DataGrid
         rows={rows}
         columns={columns}
-        editMode="row"
         rowModesModel={rowModesModel}
         onRowModesModelChange={handleRowModesModelChange}
         onRowEditStop={handleRowEditStop}
@@ -154,6 +161,7 @@ const Grid = ({ gridColumns, gridData = [], onAdd, onEdit, onDelete }: any) => {
         slotProps={{
           toolbar: { setRows, setRowModesModel },
         }}
+        autoHeight
       />
     </Box>
   );
