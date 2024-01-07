@@ -20,7 +20,7 @@ const Expenses = () => {
   }, [items]);
 
   return (
-    <div className="home-wrapper">
+    <div>
       {isLoading ? (
         <h1> Loading ....</h1>
       ) : (

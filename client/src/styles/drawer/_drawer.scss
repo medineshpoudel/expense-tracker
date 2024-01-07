@@ -1,15 +1,18 @@
 .drawer-wrapper {
-  height: calc((#{$content-page-height}) - 5px);
+  height: $content-page-height;
   box-shadow: 3px 4px 5px -2px $box-shadow;
   -webkit-box-shadow: 3px 4px 5px -2px $box-shadow;
   -moz-box-shadow: 3px 4px 5px -2px $box-shadow;
   z-index: $drawer-z-index;
   transition: width ease-in 0.3s;
-  margin-left: -10px;
-  margin-top: 20px;
-  border-top: 1px solid $white;
   position: absolute;
-  background-color: white;
+  margin-top: 40px;
+  width: $drawer-width !important;
+  background-color: $body-bg;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: -10px;
 }
 
 .drawer-user-info {
@@ -80,9 +83,6 @@
 @media (max-width: 500px) {
   .drawer-wrapper {
     width: 250px;
-  }
-  .drawer-user-info {
-    padding-right: 5px;
   }
 }
 

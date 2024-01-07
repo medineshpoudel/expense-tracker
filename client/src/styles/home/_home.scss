@@ -1,6 +1,8 @@
 .app-content {
   height: $content-page-height;
   z-index: 5;
+  width: $content-page-width;
+  margin-left: $drawer-width;
 }
 .content-wrapper {
   height: 100%;

@@ -217,7 +217,9 @@ body > .k-animation-container {
 
 .app-content {
   height: calc(100vh - (50px));
-  z-index: 5; }
+  z-index: 5;
+  width: calc(100vw - 250px);
+  margin-left: 250px; }
 
 .content-wrapper {
   height: 100%;
@@ -227,7 +229,7 @@ body > .k-animation-container {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: #490ccd;
+  background-color: #1b37d5;
   height: 100%; }
   .landing-header .header-content {
     flex: 2;
@@ -266,22 +268,25 @@ body > .k-animation-container {
     height: 100%; } }
 
 .drawer-wrapper {
-  height: calc((calc(100vh - (50px))) - 5px);
+  height: calc(100vh - (50px));
   box-shadow: 3px 4px 5px -2px #00000029;
   -webkit-box-shadow: 3px 4px 5px -2px #00000029;
   -moz-box-shadow: 3px 4px 5px -2px #00000029;
   z-index: 6;
   transition: width ease-in 0.3s;
-  margin-left: -10px;
-  margin-top: 20px;
-  border-top: 1px solid #ffffff;
   position: absolute;
-  background-color: white; }
+  margin-top: 40px;
+  width: 250px !important;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: -10px; }
 
 .drawer-user-info {
   display: flex;
   height: 70px;
-  background-color: #490ccd;
+  background-color: #1b37d5;
   width: 100%;
   color: white !important;
   font-weight: 600;
@@ -327,7 +332,7 @@ body > .k-animation-container {
     padding: 10px;
     cursor: pointer; }
   .drawer-routes .routes-wrapper:hover {
-    background-color: #490ccd;
+    background-color: #1b37d5;
     color: #ffffff; }
   .drawer-routes .drawer-route {
     font-weight: 600;
@@ -335,9 +340,7 @@ body > .k-animation-container {
 
 @media (max-width: 500px) {
   .drawer-wrapper {
-    width: 250px; }
-  .drawer-user-info {
-    padding-right: 5px; } }
+    width: 250px; } }
 
 @media (min-width: 500px) {
   .drawer-wrapper {
@@ -349,7 +352,7 @@ body > .k-animation-container {
 .header {
   height: 50px;
   width: 100%;
-  background-color: #490ccd;
+  background-color: #1b37d5;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -377,7 +380,7 @@ body > .k-animation-container {
 
 .button:hover {
   background-color: #ffffff;
-  color: #490ccd; }
+  color: #1b37d5; }
 
 .login-page-wrapper {
   display: flex;
@@ -391,7 +394,7 @@ body > .k-animation-container {
   .login-form-wrapper .login-form-header {
     font-weight: 700;
     font-size: 30px;
-    color: #490ccd;
+    color: #1b37d5;
     margin-bottom: 20px; }
   .login-form-wrapper form {
     padding: 20px;
@@ -418,7 +421,7 @@ body > .k-animation-container {
 
 .login-button {
   width: 90%;
-  background-color: #490ccd;
+  background-color: #1b37d5;
   color: white;
   border-radius: 5px;
   padding: 10px;
@@ -428,7 +431,7 @@ body > .k-animation-container {
 
 .signup-switch-button {
   background-color: none;
-  color: #490ccd;
+  color: #1b37d5;
   border: none;
   font-weight: 600;
   cursor: pointer; }
@@ -467,7 +470,7 @@ body > .k-animation-container {
     text-align: start;
     font-weight: 800;
     padding: 10px;
-    color: #490ccd;
+    color: #1b37d5;
     width: 100%;
     margin-bottom: 10px;
     border-bottom: 2px solid #c2baba;
@@ -488,7 +491,7 @@ body > .k-animation-container {
       overflow-x: auto;
       flex: 12; }
     .form-wrapper .form label {
-      color: #490ccd;
+      color: #1b37d5;
       font-size: 1rem;
       font-weight: 600; }
     .form-wrapper .form .field {

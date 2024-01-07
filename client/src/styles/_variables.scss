@@ -15,7 +15,7 @@ $full-height: calc(100vh);
 $full-width: calc(100vw);
 
 $header-height: 50px;
-$drawer-width: 85px;
+$drawer-width: 250px;
 
 $content-page-height: calc(100vh - (#{$header-height}));
 $content-page-width: calc(100vw - #{$drawer-width});
