@@ -5,6 +5,7 @@ import useQueryHook from '../../hooks/useQuery.hooks';
 import GridWithForm from '../../components/grid/GridWithForm';
 import DebtsFormFields from './DebtsFormField';
 import DebtsGridColumns from './DebtsGridColumns';
+import LoadingPage from '../LoadingPage';
 
 const Debts = () => {
   const { items, isLoading, onActionHandler } = useQueryHook({ query: 'debts' });
@@ -12,7 +13,7 @@ const Debts = () => {
   return (
     <div>
       {isLoading ? (
-        <h1> Loading ....</h1>
+        <LoadingPage />
       ) : (
         <div className="expenses-wrapper">
           <GridWithForm

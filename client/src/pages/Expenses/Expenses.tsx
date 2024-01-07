@@ -8,6 +8,7 @@ import RecordGrirdColumns from '../Records/RecordsGridColumns';
 import GridWithForm from '../../components/grid/GridWithForm';
 import ExpensesFormFields from './ExpensesFormFields';
 import ExpensesGridColumn from './ExpensesGridColumns';
+import LoadingPage from '../LoadingPage';
 
 const Expenses = () => {
   const [chartLabels, setChartLabels] = useState<any>([]);
@@ -22,7 +23,7 @@ const Expenses = () => {
   return (
     <div>
       {isLoading ? (
-        <h1> Loading ....</h1>
+        <LoadingPage />
       ) : (
         <div className="expenses-wrapper">
           <GridWithForm
