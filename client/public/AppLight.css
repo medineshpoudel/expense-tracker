@@ -219,7 +219,8 @@ body > .k-animation-container {
   height: calc(100vh - (50px));
   z-index: 5;
   width: calc(100vw - 250px);
-  margin-left: 250px; }
+  margin-left: 250px;
+  overflow-y: auto; }
 
 .content-wrapper {
   height: 100%;
@@ -266,6 +267,12 @@ body > .k-animation-container {
     flex-direction: row;
     background-color: red;
     height: 100%; } }
+
+.home-dashboard-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px; }
 
 .drawer-wrapper {
   height: calc(100vh - (50px));

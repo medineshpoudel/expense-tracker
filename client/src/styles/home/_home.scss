@@ -3,6 +3,7 @@
   z-index: 5;
   width: $content-page-width;
   margin-left: $drawer-width;
+  overflow-y: auto;
 }
 .content-wrapper {
   height: 100%;
@@ -60,4 +61,11 @@
     background-color: red;
     height: 100%;
   }
+}
+
+.home-dashboard-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 10px;
 }

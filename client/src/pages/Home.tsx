@@ -1,10 +1,54 @@
-import React from 'react';
-import { Spinner, IconButton } from '@chakra-ui/react';
+import Card from '@mui/material/Card';
+import { BarChart } from '@mui/x-charts/BarChart';
+import PieChart from '../components/charts/PieChart';
 
 const Home = () => (
-  <div>
-    <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color="blue.500" size="xl" />
-    <IconButton colorScheme="blue" aria-label="Search database" />
+  <div className="home-dashboard-wrapper">
+    <Card sx={{ minWidth: 275 }} className="dasboard-boards">
+      <PieChart />
+    </Card>
+    <Card sx={{ minWidth: 275 }} className="dasboard-boards">
+      <BarChart
+        xAxis={[
+          {
+            id: 'barCategories',
+            data: ['bar A', 'bar B', 'bar C'],
+            scaleType: 'band',
+          },
+        ]}
+        series={[
+          {
+            data: [2, 5, 3],
+          },
+        ]}
+        width={500}
+        height={300}
+      />
+    </Card>
+    <Card sx={{ minWidth: 275 }} className="dasboard-boards">
+      <PieChart />
+    </Card>
+    <Card sx={{ minWidth: 275 }} className="dasboard-boards">
+      <BarChart
+        xAxis={[
+          {
+            id: 'barCategories',
+            data: ['bar A', 'bar B', 'bar C'],
+            scaleType: 'band',
+          },
+        ]}
+        series={[
+          {
+            data: [2, 5, 3],
+          },
+        ]}
+        width={500}
+        height={300}
+      />
+    </Card>
+    <Card sx={{ minWidth: 275 }} className="dasboard-boards">
+      <PieChart />
+    </Card>
   </div>
 );
 

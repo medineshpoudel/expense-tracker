@@ -13,15 +13,9 @@ export interface DrawerProps {
 
 const Drawer = ({ username = 'Dinesh Poudel', isLoggedIn = true }: DrawerProps) => {
   const navigate = useNavigate();
-  const [showDrawer, setShowDrawer] = useState<boolean>(false);
-
-  const handleHamburgerClick = () => {
-    setShowDrawer((prevValue) => !prevValue);
-  };
 
   const routeClickHandler = (route: any) => {
     navigate(route.route);
-    setShowDrawer(false);
   };
 
   return (
