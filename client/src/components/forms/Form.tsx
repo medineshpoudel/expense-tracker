@@ -10,6 +10,7 @@ export interface FieldProps {
   label: string;
   dropdownList?: String[];
   required?: boolean;
+  disabled?: boolean;
 }
 
 export interface FormProps {
@@ -57,7 +58,7 @@ const FormComponent = ({
                         {field.required && '(Required)'}
                       </span>
                     </label>
-                    <Field as="select" name={field.name} className="field">
+                    <Field as="select" name={field.name} className="field" disable={field.disabled}>
                       {field.dropdownList.map((list: string) => (
                         <option value={list}>{list}</option>
                       ))}
@@ -77,6 +78,7 @@ const FormComponent = ({
                       name={field.name}
                       placeholder={field.placeholder}
                       className="field"
+                      disable={field.disabled}
                     />
                     <ErrorMessage className="form-error" name={field.type} component="span" />
                   </div>

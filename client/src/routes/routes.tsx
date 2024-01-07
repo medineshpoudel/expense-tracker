@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import Login from '../pages/Authentication/Login';
 import Signup from '../pages/Authentication/Signup';
+import Debts from '../pages/Debts/Debts';
 import Expenses from '../pages/Expenses/Expenses';
 import Home from '../pages/Home';
 import Landing from '../pages/Landing';
-import Records from '../pages/Records/Records';
 
 const routes = [
   {
@@ -53,11 +53,11 @@ const routes = [
     icon: 'fa-solid fa-list',
   },
   {
-    text: 'Records',
-    name: 'Records',
+    text: 'Debts',
+    name: 'Debts',
     role: ['user'],
-    element: <Records />,
-    route: '/records',
+    element: <Debts />,
+    route: '/debts',
     parent: 'default',
     icon: 'fa-solid fa-list',
   },
